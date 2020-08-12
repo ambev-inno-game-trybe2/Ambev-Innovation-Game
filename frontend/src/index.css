@@ -1,0 +1,42 @@
+/* reset CSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+:root {
+  /* color palette */
+  --white: #fff;
+  --lightGray: #ececec;
+  --darkGray: #4c4c4c;
+  --lightGreen: #97bd7f;
+  --mediumGreen: #979e48;
+  --darkGreen: #386229;
+  --mediumOrange: #af871f;
+  --darkOrange: #a6681c;
+}
+
+#root {
+  min-width: 1vw;
+  min-height: 1vh;
+}
