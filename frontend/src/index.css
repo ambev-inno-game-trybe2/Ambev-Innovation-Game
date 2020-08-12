@@ -1,0 +1,32 @@
+/* reset CSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+:root {
+  /* project colors */
+  --white: #fff;
+  --color1: #97BD7F;
+}
