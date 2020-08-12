@@ -18,7 +18,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 body p {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
@@ -26,7 +25,18 @@ body p {
 }
 
 :root {
-  /* project colors */
+  /* color palette */
   --white: #fff;
-  --color1: #97BD7F;
+  --lightGray: #ececec;
+  --darkGray: #4c4c4c;
+  --lightGreen: #97bd7f;
+  --mediumGreen: #979e48;
+  --darkGreen: #386229;
+  --mediumOrange: #af871f;
+  --darkOrange: #a6681c;
+}
+
+#root {
+  min-width: 1vw;
+  min-height: 1vh;
 }
