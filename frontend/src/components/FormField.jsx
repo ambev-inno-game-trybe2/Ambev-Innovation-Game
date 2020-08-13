@@ -11,7 +11,7 @@ const FormField = ({
   required,
   cols,
   rows,
-  maxLength
+  maxLength,
 }) => {
   return (
     <div>
@@ -51,9 +51,9 @@ FormField.defaultProps = {
   placeholder: '',
   onChange: null,
   required: false,
-  cols: "50",
-  rows: "4",
-  maxLength: "100",
+  cols: '50',
+  rows: '4',
+  maxLength: '100',
 };
 
 FormField.propTypes = {
@@ -61,6 +61,7 @@ FormField.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   cols: PropTypes.string,
   rows: PropTypes.string,
