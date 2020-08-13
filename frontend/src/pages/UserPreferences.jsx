@@ -11,3 +11,7 @@ export default function UserPreferences({ ingredients }) {
     <button type="button">Finalizar</button>
   </section>;
 }
+
+UserPreferences.propTypes = {
+  ingredients: PropTypes.arrayOf(PropTypes.obj).isRequired,
+}
