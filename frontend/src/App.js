@@ -8,11 +8,9 @@ function App() {
   return (
     <main className="App text-center">
       <Switch>
-        <Route exact path="/">
-          {Home}
-        </Route>
-        <Route path="/signup">{SignUp}</Route>
-        <Route>{NotFound}</Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/signup" component={SignUp} />
+        <Route component={NotFound} />
       </Switch>
     </main>
   );
