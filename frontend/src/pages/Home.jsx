@@ -18,8 +18,16 @@ export default function Home() {
         </Link>
       </form>
       <div>
-        <img src={facebookLogin} alt="alternative login with Facebook" />
-        <img src={googleLogin} alt="alternative login with Google" />
+        <input
+          type="image"
+          src={facebookLogin}
+          alt="alternative login with Facebook"
+        />
+        <input
+          type="image"
+          src={googleLogin}
+          alt="alternative login with Google"
+        />
       </div>
     </section>
   );
