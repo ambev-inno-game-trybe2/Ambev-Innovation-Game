@@ -7,10 +7,7 @@ import googleLogin from '../assets/btn_google_signin_light_normal_web.png';
 export default function Home() {
   return (
     <main>
-      <img
-        src={appLogo}
-        alt="Healthy green smoothie with spinach, kiwi and orange and mobile phone on wooden light retro table. Source: https://unsplash.com/photos/nG4ZimMIO_k"
-      />
+      <img src={appLogo} alt="I'm Thirsty Logo" />
       <FormField
         placeholder="Insira seu nome"
         type="text"
