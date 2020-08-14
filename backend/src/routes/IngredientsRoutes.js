@@ -5,7 +5,7 @@ const User = require('../models/User');
 const createUser = async (req, res) => {
   const { registration, name, turma, senha, role } = req.body;
   const user = await User.create({ registration, name, turma, senha });
-  return res.json({"message": "Usuário criado!", user}).status(201);
+  return res.json({ message: 'Usuário criado!', user }).status(201);
 };
 
 const deleteUser = async (req, res) => {
@@ -17,7 +17,7 @@ const deleteUser = async (req, res) => {
 const updateUser = async (req, res) => {
   const { body } = req;
   const user = await User.updateOne({ body });
-  return res.json({user }).send(200);
+  return res.json({ user }).send(200);
 };
 
 router.post('/', createUser);
