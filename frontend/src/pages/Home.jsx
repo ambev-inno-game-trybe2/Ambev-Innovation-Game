@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Image from 'react-bootstrap/Image';
 import useForm from '../hooks/useForm';
 import FormField from '../components/FormField';
 import appLogo from '../assets/logo2.png';
 import facebookLogin from '../assets/facebook-login-icon-19.jpg';
 import googleLogin from '../assets/btn_google_signin_light_normal_web.png';
+import '../styles/background.css';
 
 const initialState = {
   userName: '',
@@ -14,9 +18,9 @@ const initialState = {
 export default function Home() {
   const { clearForm, handleChange } = useForm(initialState);
   return (
-    <section className="container-fluid main">
-      <img src={appLogo} alt="I'm Thirsty Logo" />
-      <form onSubmit={() => clearForm()}>
+    <Container as="section" className="main" fluid>
+      <Image src={appLogo} alt="I'm Thirsty Logo" fluid />
+      <Form onSubmit={() => clearForm()}>
         <FormField
           placeholder="Nome"
           type="text"
@@ -35,7 +39,7 @@ export default function Home() {
         <Link to="/signup">
           <button type="button">Cadastre-se</button>
         </Link>
-      </form>
+      </Form>
       <div>
         <input
           type="image"
@@ -48,6 +52,6 @@ export default function Home() {
           alt="alternative login with Google"
         />
       </div>
-    </section>
+    </Container>
   );
 }

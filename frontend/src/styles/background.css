@@ -1,0 +1,6 @@
+.main {
+  background-attachment: fixed;
+  background-color: var(--lightGray);
+  background-image: url(../assets/greendrink.jpg);
+  background-repeat: no-repeat;
+}
