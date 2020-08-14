@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-const InfoModal = ({ text }) => {
+const InfoModal = ({ text, onHide, show }) => {
   return (
     <Modal
-      {...props}
+      show={show}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>Bem vindo ao I'm Thirsty!</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>{text}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Fechar</Button>
+        <Button onClick={onHide}>Fechar</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -26,6 +26,8 @@ const InfoModal = ({ text }) => {
 
 InfoModal.propTypes = {
   text: PropTypes.string.isRequired,
+  onHide: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
 };
 
-export default OnBoardingModal;
+export default InfoModal;
