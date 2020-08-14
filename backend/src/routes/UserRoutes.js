@@ -5,16 +5,17 @@ const User = require('../models/User');
 const generateToken = require('../utils/token');
 const hashNow = require('../utils/hash');
 const decryptHash = require('../utils/hash');
+const verifyJWT = require('../middlewares/verifyJWT');
 
 const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
   const userExists = await User.find({ email });
   console.log(userExists);
-  const hashedPw = hashNow(password);
   const token = generateToken(email);
+  console.log(token);
   console.log(userExists.length);
   if (userExists.length === 0) {
-    const user = await User.create({ email, bio, address, password: hashedPw, token: token });
+    const user = await User.create({ email, bio, address, password, token: token });
     return res.json({ message: 'Usuário criado!', user }).status(201);
   }
   return res.json({
@@ -45,7 +46,7 @@ const updateUser = async (req, res) => {
 };
 
 router.post('/', createUser);
-router.delete('/', deleteUser);
+router.delete('/', verifyJWT, deleteUser);
 router.patch('/', updateUser);
 router.get('/login', loginRoute);
 

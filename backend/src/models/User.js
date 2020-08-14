@@ -8,9 +8,9 @@ const UserSchema = new mongoose.Schema({
     name: {
       firstName: { type: String, require: true, min: 1, mas: 20 },
       lastName: { type: String, require: true, min: 1, mas: 20 },
-      age: { type: Number, require: true },
-      birthday: { type: Date, require: true },
     },
+    age: { type: Number, require: true },
+    birthday: { type: Date, require: true },
   },
   address: {
     street: { type: String, require: true, min: 4, max: 60 },

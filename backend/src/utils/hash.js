@@ -13,3 +13,6 @@ const decryptHash = (hash) => {
 };
 
 (module.exports = hashNow), (module.exports = decryptHash);
+
+console.log(process.env.SECRET);
+console.log(hashNow('test'));
