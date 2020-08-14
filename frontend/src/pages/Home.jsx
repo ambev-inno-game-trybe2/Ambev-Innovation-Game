@@ -14,7 +14,7 @@ const initialState = {
 export default function Home() {
   const { clearForm, handleChange } = useForm(initialState);
   return (
-    <section>
+    <section className="container-fluid main">
       <img src={appLogo} alt="I'm Thirsty Logo" />
       <form onSubmit={() => clearForm()}>
         <FormField

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import useForm from '../hooks/useForm';
 import FormField from '../components/FormField';
 import appLogo from '../assets/logo2.png';
@@ -16,10 +17,13 @@ const initialState = {
 export default function SignUp() {
   const [redirect, setRedirect] = useState(false);
   const { clearForm, handleChange } = useForm(initialState);
+
+  if (redirect) return <Redirect to="/user_preferences" />;
+
   return (
-    <main>
+    <section className="container-fluid main">
       <img src={appLogo} alt="I'm Thirsty Logo" />
-      <form onSubmit={() => clearForm()}>
+      <form onSubmit={() => setRedirect(!redirect)}>
         <FormField
           placeholder="Nome"
           type="text"
@@ -80,6 +84,6 @@ export default function SignUp() {
           Limpar
         </button>
       </form>
-    </main>
+    </section>
   );
 }
