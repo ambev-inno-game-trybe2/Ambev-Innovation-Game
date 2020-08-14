@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
 
 const FormField = ({
   labelText,
@@ -15,9 +16,10 @@ const FormField = ({
 }) => {
   return (
     <div>
-      {labelText && <label htmlFor={name}>{labelText}</label>}
+      {labelText && <Form.Label htmlFor={name}>{labelText}</Form.Label>}
       {type !== 'textarea' && (
-        <input
+        <Form.Control
+          as="input"
           type={type}
           name={name}
           id={name}
@@ -29,7 +31,8 @@ const FormField = ({
         />
       )}
       {type === 'textarea' && (
-        <textarea
+        <Form.Control
+          as="textarea"
           name={name}
           id={name}
           value={value}
