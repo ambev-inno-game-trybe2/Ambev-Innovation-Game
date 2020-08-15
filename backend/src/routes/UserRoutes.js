@@ -40,9 +40,13 @@ const deleteUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  const { body } = req;
-  const user = await User.updateOne({ body });
-  return res.json({ user }).send(200);
+  const { _id, update } = req.body;
+  try {
+    const user = await Recipe.findByIdAndUpdate(_id, update, { new: true });
+    return res.json({ user }).send(200);
+  } catch (error) {
+    res.json({ message: error });
+  }
 };
 
 router.post('/', createUser);
