@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema({
   email: { type: String, require: true, min: 1, max: 60 },
@@ -18,8 +19,8 @@ const UserSchema = new mongoose.Schema({
     state: { type: String, require: true, min: 4, max: 60 },
     country: { type: String, require: true, min: 4, max: 60 },
   },
-  likedRecipes: [{ type: String }],
-  likedIngredients: [{ type: String }],
+  likedRecipes: [{ type: Schema.Types.ObjectId, ref: 'Recipe' }],
+  likedIngredients: [{ type: Schema.Types.ObjectId, ref: 'Ingredient' }],
   role: { type: String, default: 'user', require: true },
 });
 

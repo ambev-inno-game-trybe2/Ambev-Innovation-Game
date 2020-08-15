@@ -1,27 +1,27 @@
 var express = require('express');
 var router = express.Router();
-const User = require('../models/User');
+const Ingredient = require('../models/Ingredients');
 
-const createUser = async (req, res) => {
-  const { registration, name, turma, senha, role } = req.body;
-  const user = await User.create({ registration, name, turma, senha });
-  return res.json({ message: 'Usuário criado!', user }).status(201);
+const createIngredient = async (req, res) => {
+  const { name, category, slug } = req.body;
+  const ingredient = await Ingredient.create({ name, category, slug });
+  return res.json({ message: 'Usuário criado!', ingredient }).status(201);
 };
 
-const deleteUser = async (req, res) => {
+const deleteIngredient = async (req, res) => {
   const { _id } = req.body;
-  const user = await User.deleteOne({ _id });
-  return res.json({ message: 'User deleted!', user }).status(410);
+  const ingredient = await Ingredient.deleteOne({ _id });
+  return res.json({ message: 'Ingredient deleted!', ingredient }).status(410);
 };
 
-const updateUser = async (req, res) => {
+const updateIngredient = async (req, res) => {
   const { body } = req;
-  const user = await User.updateOne({ body });
-  return res.json({ user }).send(200);
+  const ingredient = await Ingredient.findOneAndUpdate({ body });
+  return res.json({ ingredient }).send(200);
 };
 
-router.post('/', createUser);
-router.delete('/', deleteUser);
-router.patch('/', updateUser);
+router.post('/', createIngredient);
+router.delete('/', deleteIngredient);
+router.patch('/', updateIngredient);
 
 module.exports = router;
