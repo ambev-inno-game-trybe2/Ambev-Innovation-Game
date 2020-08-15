@@ -1,4 +1,4 @@
-const receitasMock = [
+export const receitasMock = [
   {
     _id: 1,
     name: 'receita top demais',
@@ -26,7 +26,7 @@ const receitasMock = [
     userId: 2,
     description: 'falar sobre esta receita',
     preparationMode: 'como fazer esta receita',
-    origin: { state: 'MG', city: 'Belo horizonte', address: 'Rua num sei da onde' },
+    origin: { state: 'SP', city: 'São Paulo', address: 'Rua num sei da onde' },
     category: 'suco',
     liked: 100,
     image: 'image.png',
@@ -47,7 +47,7 @@ const receitasMock = [
     userId: 2,
     description: 'falar sobre esta receita',
     preparationMode: 'como fazer esta receita',
-    origin: { state: 'MG', city: 'Belo horizonte', address: 'Rua num sei da onde' },
+    origin: { state: 'RJ', city: 'Rio de Janeiro', address: 'Rua num sei da onde' },
     category: 'suco',
     liked: 100,
     image: 'image.png',
@@ -64,7 +64,7 @@ const receitasMock = [
   },
 ];
 
-const userMock = [
+export const userMock = [
   {
     _id: 1,
     name: 'Rhian',
@@ -83,7 +83,7 @@ const userMock = [
   },
 ];
 
-const ingredientesMock = [
+export const ingredientesMock = [
   {
     _id: 1,
     name: 'maça',

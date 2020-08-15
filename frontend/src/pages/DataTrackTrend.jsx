@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
-import CardTrackTrend from '../components/CardRecipesList';
-
-const getUser = () => JSON.parse(localStorage.getItem('user'));
-
-function HeaderAuthorization() {
-  const token = getUser().token;
-  return {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: token,
-    },
-  }
-}
-
-const getRecipes = async () => {
-  const URL_API_RECEITS = 'http://localhost:3001/admin/orders';
-
-  const response = await fetch(URL_API_RECEITS, HeaderAuthorization());
-  const data = await response.json();
-  return data;
-}
+import context from '../context/context';
+import CardTrackTrend from '../components/CardTrackTrend';
+import { receitasMock } from '../mock/mockTables';
+import getRecipes from '../services/recipesAPI';
 
 function DataTrackTrend() {
-
+  const { filterState, filterCity } = useContext(context);
   const [recipes, setRecipes] = useState();
   const [filter, setFilter] = useState('receitas');
   const [isFetching, setIsFetching] = useState(false);
@@ -32,10 +14,10 @@ function DataTrackTrend() {
   useEffect(() => {
     if (!isFetching && !recipes) {
       setIsFetching(true);
-      getRecipes().then(result => {
-        setRecipes(result);
-        setIsFetching(false);
-      });
+      // getRecipes(filter, filterState, filterCity).then(result => {
+      setRecipes(receitasMock);
+      setIsFetching(false);
+      // });
     }
   }, [isFetching]);
 
@@ -47,7 +29,7 @@ function DataTrackTrend() {
         <option value="recipes">Receitas</option>
         <option value="ingredients">Ingredientes</option>
       </select>
-      {recipes && <CardTrackTrend recipes={recipes} />}
+      {recipes && (<CardTrackTrend recipes={recipes} />)}
     </section>
   );
 }
