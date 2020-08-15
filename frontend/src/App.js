@@ -1,15 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from './pages/NotFound';
-import RecipeList from './pages/RecipeList';
-import DataTrackTrend from './pages/DataTrackTrend';
+import RecipesList from './pages/RecipesList';
 
 function App() {
   return (
     <main className="App text-center">
       <Switch>
-        <Route exact path="/recipes" component={RecipeList} />
-        <Route exact path="/search-recipe" component={DataTrackTrend} />
+        <Route exact path="/recipes" component={RecipesList} />
         <Route component={NotFound} />
       </Switch>
     </main>
