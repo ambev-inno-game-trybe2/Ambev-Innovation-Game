@@ -10,10 +10,10 @@ const verifyJWT = require('../middlewares/verifyJWT');
 const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
   const userExists = await User.find({ email });
-  console.log(userExists);
   const token = generateToken(email);
-  console.log(token);
-  console.log(userExists.length);
+  if (!email) {
+    return res.json({ message: 'error' });
+  }
   if (userExists.length === 0) {
     const user = await User.create({ email, bio, address, password, token: token });
     return res.json({ message: 'Usuário criado!', user }).status(201);

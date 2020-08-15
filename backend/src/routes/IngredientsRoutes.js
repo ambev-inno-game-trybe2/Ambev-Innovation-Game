@@ -24,17 +24,31 @@ const deleteIngredient = async (req, res) => {
 
 const updateIngredient = async (req, res) => {
   const { _id, update } = req.body;
+  console.log(req.body);
   try {
-    const ingredient = await Recipe.findByIdAndUpdate(_id, update, { new: true });
+    const ingredient = await Ingredient.findByIdAndUpdate(_id, update, { new: true });
     return res.json({ ingredient }).send(200);
   } catch (error) {
+    console.log(error);
     res.json({ message: error });
   }
 };
 
-router.get('/', getAllIngredients);
+const getIngredient = async (req, res) => {
+  const { _id } = req.body;
+  try {
+    const ingredient = await Ingredient.findOne({ _id });
+    return res.json({ ingredient });
+  } catch (error) {
+    console.log(error);
+    return res.json({ message: error });
+  }
+};
+
+router.get('/all', getAllIngredients);
 router.post('/', createIngredient);
 router.delete('/', deleteIngredient);
 router.patch('/', updateIngredient);
+router.get('/', getIngredient);
 
 module.exports = router;
