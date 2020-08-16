@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import context from '../context/context';
 import CardFilterRecipesList from '../components/CardFilterRecipesList';
 import { receitasMock } from '../mock/mockTables';
-import { getFilterRecipes } from '../services/recipesAPI';
+import { getFilterRecipes, getUser } from '../services/recipesAPI';
 
 function RecipesList({ location: { pathname } }) {
   const { filterState, filterCity } = useContext(context);
@@ -21,6 +21,7 @@ function RecipesList({ location: { pathname } }) {
     }
   }, [isFetching]);
 
+  // if (!getUser()) return <Redirect to="/login" />
   if (isFetching) return <h1>Carregando...</h1>;
 
   return (

@@ -1,4 +1,4 @@
-const getUser = () => JSON.parse(localStorage.getItem('user'));
+export const getUser = () => JSON.parse(localStorage.getItem('user'));
 
 function HeaderAuthorization(method = 'GET', body = '') {
   const token = getUser().token;

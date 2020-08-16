@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import CardIngredientsList from '../components/CardIngredientsList';
 import { ingredientesMock } from '../mock/mockTables';
-import { getAppThirsty } from '../services/recipesAPI';
+import { getAppThirsty, getUser } from '../services/recipesAPI';
 
 function IngredientsList({ location: { pathname } }) {
   const [ingredients, setIngredients] = useState();
@@ -18,7 +18,8 @@ function IngredientsList({ location: { pathname } }) {
       // });
     }
   }, [isFetching]);
-
+  
+  // if (!getUser()) return <Redirect to="/login" />
   if (isFetching) return <h1>Carregando...</h1>;
 
   return (

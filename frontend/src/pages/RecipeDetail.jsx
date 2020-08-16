@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { receitaDetalheMock } from '../mock/mockTables';
-import { getAppThirsty } from '../services/recipesAPI';
+import { getAppThirsty, getUser } from '../services/recipesAPI';
 import CardRecipeDetails from '../components/CardRecipeDetail';
 
 function RecipeDetail({ location: { pathname } }) {
@@ -19,6 +19,7 @@ function RecipeDetail({ location: { pathname } }) {
     }
   }, [isFetching]);
 
+  // if (!getUser()) return <Redirect to="/login" />
   if (isFetching) return <h1>Carregando...</h1>;
 
   return (

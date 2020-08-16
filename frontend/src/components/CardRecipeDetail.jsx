@@ -27,7 +27,7 @@ const CardRecipeDetails = ({ recipe }) => {
       <p>Curtidas: {liked}</p>
       <input
         type="image"
-        // onClick={() => getAppThirsty('/recipes', 'PUT', { liked: 1 })}
+        // onClick={() => getAppThirsty('/recipes', 'PATCH', { liked: 1 })}
         src={recipeLiked ? RedHeart : Heart}
         className="favorite-icon"
         />
