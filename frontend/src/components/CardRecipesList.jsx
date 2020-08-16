@@ -2,17 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function CardRecipesList({ recipes }) {
-  const { _id: id, name, origin: { state, city }, category, liked, image, ingredients } = recipes;
+  const { _id: id, title, origin: { state, city }, category, liked, image, ingredients } = recipes;
 
   return (
     <Link to={`/recipes/${id}`}>
       <section className="CardOrder card">
-        <img src={image} alt={`receita ${name}`} />
-        <p>{name}</p>
+        <img src={image} alt={`receita ${title}`} />
+        <p>{title}</p>
         <p>Origem: {city}, {state}</p>
         <p>Categoria: {category}</p>
         <p>Curtidas: {liked}</p>
-        {/* <ul>Ingredientes: {ingredients.map(({ _id }) => functionRequisiçãoDosingredites(_id))}</ul> */}
+        {/* {ingredients.map(ingredient => (
+        <div>
+          <h5>{ingredient.title}</h5>
+          <h5>{ingredient.quantity}</h5>
+        </div>
+      ))} */}
       </section>
     </Link>
   );

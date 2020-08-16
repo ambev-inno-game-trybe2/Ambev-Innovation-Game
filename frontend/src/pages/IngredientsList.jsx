@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import CardIngredientsList from '../components/CardIngredientsList';
 import { ingredientesMock } from '../mock/mockTables';
-import getAppThirsty from '../services/recipesAPI';
+import { getAppThirsty } from '../services/recipesAPI';
 
 function IngredientsList({ location: { pathname } }) {
   const [ingredients, setIngredients] = useState();
@@ -24,7 +24,7 @@ function IngredientsList({ location: { pathname } }) {
   return (
     <section>
       <Link to={'/recipes'}>
-        <button>Visualizar página de receitas</button>
+        <button type="button">Visualizar página de receitas</button>
       </Link>
       {ingredients &&
         ingredients.map((ingredient, index) => (

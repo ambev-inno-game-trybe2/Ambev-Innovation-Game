@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import context from '../context/context';
 import CardFilterRecipesList from '../components/CardFilterRecipesList';
 import { receitasMock } from '../mock/mockTables';
-import getAppThirsty from '../services/recipesAPI';
+import { getFilterRecipes } from '../services/recipesAPI';
 
 function RecipesList({ location: { pathname } }) {
   const { filterState, filterCity } = useContext(context);
@@ -14,7 +14,7 @@ function RecipesList({ location: { pathname } }) {
   useEffect(() => {
     if (!isFetching && !recipes) {
       setIsFetching(true);
-      // getAppThirsty(pathname, filterState, filterCity).then(result => {
+      // getFilterRecipes(pathname, filterState, filterCity).then(result => {
       setRecipes(receitasMock);
       setIsFetching(false);
       // });
@@ -26,7 +26,7 @@ function RecipesList({ location: { pathname } }) {
   return (
     <section>
       <Link to={'/ingredients'}>
-        <button>Visualizar página de ingredientes</button>
+        <button type="button">Visualizar página de ingredientes</button>
       </Link>
       {recipes && <CardFilterRecipesList recipes={recipes} />}
     </section>

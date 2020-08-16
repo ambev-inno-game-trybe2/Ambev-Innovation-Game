@@ -1,7 +1,7 @@
 export const receitasMock = [
   {
     _id: 1,
-    name: 'receita top demais',
+    title: 'receita top demais',
     userId: 2,
     description: 'falar sobre esta receita',
     preparationMode: 'como fazer esta receita',
@@ -22,7 +22,7 @@ export const receitasMock = [
   },
   {
     _id: 2,
-    name: 'receita top demais',
+    title: 'receita top demais',
     userId: 2,
     description: 'falar sobre esta receita',
     preparationMode: 'como fazer esta receita',
@@ -43,7 +43,7 @@ export const receitasMock = [
   },
   {
     _id: 3,
-    name: 'receita top demais',
+    title: 'receita top demais',
     userId: 2,
     description: 'falar sobre esta receita',
     preparationMode: 'como fazer esta receita',
@@ -115,3 +115,25 @@ export const ingredientesMock = [
     liked: 38,
   },
 ];
+
+export const receitaDetalheMock = {
+  _id: 1,
+  title: 'receita top demais',
+  userId: 2,
+  description: 'falar sobre esta receita',
+  preparationMode: 'como fazer esta receita',
+  origin: { state: 'MG', city: 'Belo horizonte', address: 'Rua num sei da onde' },
+  category: 'suco',
+  liked: 100,
+  image: 'image.png',
+  ingredients: [
+    {
+      ingredientId: 5,
+      quantity: 2,
+    },
+    {
+      ingredientId: 1,
+      quantity: 4,
+    },
+  ],
+}
