@@ -9,13 +9,13 @@ const cors = require('cors');
 
 const morgan = require('morgan');
 
-const swaggerUi = require('swagger-ui-express');
+//const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./swagger.yaml');
+//const swaggerDocument = YAML.load('./swagger.yaml');
 
 const path = require('path');
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

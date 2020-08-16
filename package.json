@@ -1,0 +1,23 @@
+{
+  "name": "ambev-innovation-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/src/api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambev-inno-game-trybe2/Ambev-Innovation-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambev-inno-game-trybe2/Ambev-Innovation-Game/issues"
+  },
+  "homepage": "https://github.com/ambev-inno-game-trybe2/Ambev-Innovation-Game#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
