@@ -24,12 +24,10 @@ const deleteIngredient = async (req, res) => {
 
 const updateIngredient = async (req, res) => {
   const { _id, update } = req.body;
-  console.log(req.body);
   try {
     const ingredient = await Ingredient.findByIdAndUpdate(_id, update, { new: true });
     return res.json({ ingredient }).send(200);
   } catch (error) {
-    console.log(error);
     res.json({ message: error });
   }
 };
@@ -40,7 +38,6 @@ const getIngredient = async (req, res) => {
     const ingredient = await Ingredient.findOne({ _id });
     return res.json({ ingredient });
   } catch (error) {
-    console.log(error);
     return res.json({ message: error });
   }
 };

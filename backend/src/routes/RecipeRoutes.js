@@ -4,7 +4,6 @@ const Recipe = require('../models/Recipes');
 
 const CreateRecipe = async (req, res) => {
   const { title, recipeIngredients, tasteCategory } = req.body;
-  console.log(req.body);
   if (!req.body) {
     return res.json({ message: 'operation not permited' });
   }
@@ -36,8 +35,24 @@ const updateRecipe = async (req, res) => {
   }
 };
 
+const getAllRecipes = async (req, res) => {
+  try {
+    const allRecipes = await Recipe.find({});
+    return res.json(allRecipes).status(201);
+  } catch (error) {
+    return res.json({ message: error });
+  }
+};
+
+const getOneRecipe = async (req, res) => {
+  const { _id } = req.body;
+  const recipe = await Recipe.findOne({ _id });
+  return res.json(recipe).status(200);
+};
+router.get('/all', getAllRecipes);
 router.post('/', CreateRecipe);
 router.delete('/', deleteRecipe);
 router.patch('/', updateRecipe);
+router.get('/', getOneRecipe);
 
 module.exports = router;

@@ -3,19 +3,19 @@ var express = require('express');
 var router = express.Router();
 const User = require('../models/User');
 const generateToken = require('../utils/token');
-const hashNow = require('../utils/hash');
-const decryptHash = require('../utils/hash');
+const hash = require('../utils/hash');
 const verifyJWT = require('../middlewares/verifyJWT');
 
 const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
   const userExists = await User.find({ email });
   const token = generateToken(email);
+  const encpassword = hash.hashNow(password);
   if (!email) {
     return res.json({ message: 'error' });
   }
   if (userExists.length === 0) {
-    const user = await User.create({ email, bio, address, password, token: token });
+    const user = await User.create({ email, bio, address, password: encpassword, token: token });
     return res.json({ message: 'Usuário criado!', user }).status(201);
   }
   return res.json({
@@ -27,7 +27,7 @@ const createUser = async (req, res) => {
 const loginRoute = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
-  if (user.email === email && decryptHash(user.password) === password) {
+  if (user.email === email && hash.decryptHash(user.password) === password) {
     return res.json({ token: user.token, auth: 'true' });
   }
   res.json({ message: 'Usuário ou senha inválidos!' });

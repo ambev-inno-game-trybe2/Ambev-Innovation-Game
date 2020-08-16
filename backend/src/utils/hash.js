@@ -11,8 +11,4 @@ const decryptHash = (hash) => {
   const decryptedData = JSON.parse(dec.toString(CryptoJS.enc.Utf8));
   return decryptedData;
 };
-
-(module.exports = hashNow), (module.exports = decryptHash);
-
-console.log(process.env.SECRET);
-console.log(hashNow('test'));
+module.exports = { hashNow, decryptHash };
