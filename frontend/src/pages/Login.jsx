@@ -8,6 +8,7 @@ import FormField from '../components/FormField';
 import appLogo from '../assets/logo2.png';
 import facebookLogin from '../assets/facebook-login-icon-19.jpg';
 import googleLogin from '../assets/btn_google_signin_light_normal_web.png';
+import '../styles/Login.css'
 
 const initialState = {
   userName: '',
@@ -43,11 +44,13 @@ export default function Login() {
       </Form>
       <div>
         <input
+          className="login-button"
           type="image"
           src={facebookLogin}
           alt="alternative login with Facebook"
         />
         <input
+          className="login-button"
           type="image"
           src={googleLogin}
           alt="alternative login with Google"

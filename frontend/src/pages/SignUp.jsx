@@ -44,14 +44,6 @@ export default function SignUp() {
           onChange={(event) => handleChange(event)}
         />
         <FormField
-          placeholder="Endereço"
-          type="text"
-          name="userAdress"
-          required
-          value={values.userAdress}
-          onChange={(event) => handleChange(event)}
-        />
-        <FormField
           placeholder="Cidade"
           type="text"
           name="userCity"
