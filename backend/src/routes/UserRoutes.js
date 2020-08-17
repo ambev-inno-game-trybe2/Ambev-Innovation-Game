@@ -40,7 +40,7 @@ const updateUser = async (req, res) => {
   }
 };
 
-router.post('/', validateUserModel, verifyIfUserExists, createUser);
+router.post('/', verifyIfUserExists, validateUserModel, createUser);
 router.delete('/', verifyJWT, deleteUser);
 router.patch('/', updateUser);
 router.get('/login', loginRoute);

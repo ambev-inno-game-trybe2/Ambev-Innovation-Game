@@ -1,13 +1,11 @@
 const Validator = require('validatorjs');
-const newUserValidationRules = require('./userModel');
+const newIngredientValidationRules = require('./ingredientModel');
 const validateUserModel = (req, res, next) => {
-  const validate = new Validator(req.body, newUserValidationRules);
+  const validate = new Validator(req.body, newIngredientValidationRules);
   if (validate.passes() === true) {
     next();
   }
   if (validate.errors.Errors) {
-    console.log(typeof validate.errors);
-
     return res.json(validate.errors).status(201);
   }
 };

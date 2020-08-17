@@ -1,5 +1,5 @@
 let Validator = require('validatorjs');
-const newUserValidationRules = require('./validationModels');
+const newUserValidationRules = require('./userModel');
 let data1 = {
   bio: {
     name: {
