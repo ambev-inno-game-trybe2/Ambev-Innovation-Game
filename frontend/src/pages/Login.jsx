@@ -14,7 +14,7 @@ const initialState = {
   password: '',
 };
 
-export default function Home() {
+export default function Login() {
   const { values, clearForm, handleChange } = useForm(initialState);
   return (
     <Container as="section" fluid>

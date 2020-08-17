@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Home from './pages/Home';
+import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import NotFound from './pages/NotFound';
 import RecipesList from './pages/RecipesList';
@@ -15,7 +15,7 @@ function App() {
   return (
     <Container as="main" className="main" fluid>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Login} />
         <Route path="/signup" component={SignUp} />
         <Route path="/user_preferences" component={UserPreferences} />
         <Route exact path="/ingredients" component={IngredientsList} />

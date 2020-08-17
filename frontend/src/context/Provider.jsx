@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [filterCity, setFilterCity] = useState();
 
   const storeContext = {
+    authOn,
     filterState,
     setFilterState,
     filterCity,
