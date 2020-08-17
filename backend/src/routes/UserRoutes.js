@@ -1,27 +1,18 @@
 require('dotenv').config();
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const User = require('../models/User');
 const generateToken = require('../utils/token');
 const hash = require('../utils/hash');
 const verifyJWT = require('../middlewares/verifyJWT');
-
+const validateUserModel = require('../middlewares/validateUserModel');
+const verifyIfUserExists = require('../middlewares/verifyIfExists');
 const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
-  const userExists = await User.find({ email });
   const token = generateToken(email);
   const encpassword = hash.hashNow(password);
-  if (!email) {
-    return res.json({ message: 'error' });
-  }
-  if (userExists.length === 0) {
-    const user = await User.create({ email, bio, address, password: encpassword, token: token });
-    return res.json({ message: 'Usuário criado!', user }).status(201);
-  }
-  return res.json({
-    email,
-    message: 'Email already exists',
-  });
+  const user = await User.create({ email, bio, address, password: encpassword, token: token });
+  return res.json({ message: 'Usuário criado!', user }).status(201);
 };
 
 const loginRoute = async (req, res) => {
@@ -49,7 +40,7 @@ const updateUser = async (req, res) => {
   }
 };
 
-router.post('/', createUser);
+router.post('/', validateUserModel, verifyIfUserExists, createUser);
 router.delete('/', verifyJWT, deleteUser);
 router.patch('/', updateUser);
 router.get('/login', loginRoute);

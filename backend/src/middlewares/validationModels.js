@@ -3,9 +3,9 @@ module.exports = newUserValidationRules = {
     name: {
       firstName: 'string|required|min:4|max:12',
       lastName: 'required|required|min:4|max:12',
-      age: 'required|integer',
-      birthday: 'required|date',
     },
+    age: 'required|integer',
+    birthday: 'required|date',
   },
   address: {
     street: 'required|string|min:6|max:60',
