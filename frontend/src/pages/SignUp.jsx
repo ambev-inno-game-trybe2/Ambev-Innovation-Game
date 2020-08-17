@@ -28,7 +28,7 @@ export default function SignUp() {
   return (
     <Container as="section" fluid>
       <Image src={appLogo} alt="I'm Thirsty Logo" fluid />
-      <Form onSubmit={() => setRedirect(!redirect)}>
+      <Form onSubmit={() => setRedirect(!redirect)} className="form-container">
         <FormField
           placeholder="Nome"
           type="text"

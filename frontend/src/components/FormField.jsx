@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
+import '../styles/FormInput.css';
 
 const FormField = ({
   labelText,
@@ -15,7 +16,7 @@ const FormField = ({
   maxLength,
 }) => {
   return (
-    <div>
+    <div className="form-input">
       {labelText && <Form.Label htmlFor={name}>{labelText}</Form.Label>}
       {type !== 'textarea' && (
         <Form.Control

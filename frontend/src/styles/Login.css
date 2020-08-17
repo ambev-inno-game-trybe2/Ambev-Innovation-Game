@@ -1,3 +1,9 @@
+.form-container {
+max-height: 50rem;
+max-width: 25rem;
+text-align: center;
+}
+
 .login-button {
   height: 2rem;
   margin: 0.25rem;

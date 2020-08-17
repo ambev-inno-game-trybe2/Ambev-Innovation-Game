@@ -21,7 +21,7 @@ export default function Login() {
   return (
     <Container as="section" fluid>
       <Image src={appLogo} alt="I'm Thirsty Logo" fluid className="logo" />
-      <Form onSubmit={() => clearForm()}>
+      <Form onSubmit={() => clearForm()} className="form-container">
         <FormField
           placeholder="Nome"
           type="text"
