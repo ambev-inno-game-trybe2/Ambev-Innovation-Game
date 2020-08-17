@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Image from 'react-bootstrap/Image';
-import useForm from '../hooks/useForm';
-import FormField from '../components/FormField';
-import CardCadastreRecipe from '../components/CardCadastreRecipe';
+import { getUser } from '../services/recipesAPI';
+import CardRegisterRecipe from '../components/CardRegisterRecipe';
 
 function CadastreRecipe() {
+  // if (!getUser()) return <Redirect to="/login" />
+
   return (
     <Container as="section" className="main" fluid>
-      <CardCadastreRecipe />
+      <CardRegisterRecipe />
       <Link to="/signup">
         <button type="button">Cadastre-se</button>
       </Link>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Image from 'react-bootstrap/Image';
 import useForm from '../hooks/useForm';
-import FormField from '../components/FormField';
+import FormField from './FormField';
 import { getStates } from '../services/brazillianStatesAPI';
+import { getAppThirsty } from '../services/recipesAPI';
 
-function formText(placeholder, name, type, handleChange) {
+function formText(placeholder, name, type, handleChange, values) {
   return (
     <FormField
       placeholder={placeholder}
       type={type}
       name={name}
+      value={values}
       required
       onChange={(event) => handleChange(event)}
     />
@@ -20,18 +20,6 @@ function formText(placeholder, name, type, handleChange) {
 }
 
 function filterOrigin(place, setFilter) {
-  if (!setFilter)
-    return (
-      <select>
-        <option value="">Todos</option>
-        {place.map(({ id, sigla, nome }) => (
-          <option key={id} value={sigla ? sigla : nome}>
-            {nome}
-          </option>
-        ))}
-      </select>
-    );
-
   return (
     <select onClick={(e) => setFilter(e.target.value)}>
       <option value="">Todos</option>
@@ -44,9 +32,9 @@ function filterOrigin(place, setFilter) {
   );
 }
 
-function formDropdown(category) {
+function formDropdown(category, setCategoryValue) {
   return (
-    <select>
+    <select onClick={(e) => setCategoryValue(e.target.value)}>
       {category.map((item) => <option key={item} value={item}>{item}</option>)}
     </select>
   )
@@ -56,15 +44,16 @@ const initialState = {
   title: '',
   description: '',
   preparationMode: '',
-  category: '',
 };
 
 function CardCadastreRecipe() {
-  const { clearForm, handleChange } = useForm(initialState);
+  const { clearForm, handleChange, values } = useForm(initialState);
 
   const [filterState, setFilterState] = useState();
   const [stateValue, setStateValue] = useState();
   const [filterCity, setFilterCity] = useState();
+  const [cityValue, setCityValue] = useState();
+  const [categoryValue, setCategoryValue] = useState();
   const category = ['suco', 'água', 'refrigerante', 'água com gás'];
 
   useEffect(() => {
@@ -78,15 +67,17 @@ function CardCadastreRecipe() {
 
   if (!filterState) return <h1>Carregando...</h1>;
 
+  const formData = Object.assign({}, values, { state: stateValue, city: cityValue, category: categoryValue });
+
   return (
     <Form onSubmit={() => clearForm()}>
-      {formText('Nome da receita', 'title', 'text', handleChange)}
-      {formText('Descrição', 'description', 'textarea', handleChange)}
-      {formText('Modo de preparo', 'preparationMode', 'textarea', handleChange)}
+      {formText('Nome da receita', 'title', 'text', handleChange, values.title)}
+      {formText('Descrição', 'description', 'textarea', handleChange, values.description)}
+      {formText('Modo de preparo', 'preparationMode', 'textarea', handleChange, values.preparationMode)}
       {filterOrigin(filterState, setStateValue)}
-      {filterCity && filterOrigin(filterCity)}
-      {formDropdown(category)}
-      <button type="button">Login</button>
+      {filterCity && filterOrigin(filterCity, setCityValue)}
+      {formDropdown(category, setCategoryValue)}
+      {/* <button type="submit" onClick={() => getAppThirsty('/recipes', 'POST', formData)}>Enviar</button> */}
     </Form>
   );
 }

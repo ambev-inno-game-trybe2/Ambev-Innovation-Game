@@ -12,7 +12,7 @@ function HeaderAuthorization(method = 'GET', body = '') {
   }
 }
 
-export const getAppThirsty = async (filter = 'recipes', method, body = '') => {
+export const getAppThirsty = async (filter = '/recipes', method, body = '') => {
   const URL_API_RECEITS = `http://localhost:3001${filter}`;
 
   const response = await fetch(URL_API_RECEITS, HeaderAuthorization(method, body));
