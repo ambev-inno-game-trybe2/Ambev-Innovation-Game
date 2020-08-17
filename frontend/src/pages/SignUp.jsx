@@ -3,9 +3,11 @@ import { Redirect } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 import useForm from '../hooks/useForm';
 import FormField from '../components/FormField';
 import appLogo from '../assets/logo2.png';
+import '../styles/Login.css';
 
 const initialState = {
   userName: '',
@@ -82,10 +84,22 @@ export default function SignUp() {
           value={values.password}
           onChange={(event) => handleChange(event)}
         />
-        <button type="button">Cadastre-se</button>
-        <button type="button" onClick={() => clearForm()}>
-          Limpar
-        </button>
+        <div className="button-container">
+          <Button
+            variant="secondary"
+            as="input"
+            type="submit"
+            value="Cadastre-se"
+            className="login-button"
+          />
+          <Button
+            variant="secondary"
+            className="login-button"
+            onClick={() => clearForm()}
+          >
+            Limpar
+          </Button>
+        </div>
       </Form>
     </Container>
   );

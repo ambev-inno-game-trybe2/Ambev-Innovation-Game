@@ -35,6 +35,8 @@ body p {
   --darkGreen: #386229;
   --mediumOrange: #af871f;
   --darkOrange: #a6681c;
+  
+  font-size: 16px;
 }
 
 #root {
