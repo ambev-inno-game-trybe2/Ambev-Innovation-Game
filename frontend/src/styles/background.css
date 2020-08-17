@@ -3,4 +3,5 @@
   background-color: var(--lightGray);
   background-image: url(../assets/greendrink.jpg);
   background-repeat: no-repeat;
+  background-size: 100%;
 }

@@ -8,7 +8,6 @@ import FormField from '../components/FormField';
 import appLogo from '../assets/logo2.png';
 import facebookLogin from '../assets/facebook-login-icon-19.jpg';
 import googleLogin from '../assets/btn_google_signin_light_normal_web.png';
-import '../styles/background.css';
 
 const initialState = {
   userName: '',
@@ -18,7 +17,7 @@ const initialState = {
 export default function Home() {
   const { values, clearForm, handleChange } = useForm(initialState);
   return (
-    <Container as="section" className="main" fluid>
+    <Container as="section" fluid>
       <Image src={appLogo} alt="I'm Thirsty Logo" fluid />
       <Form onSubmit={() => clearForm()}>
         <FormField

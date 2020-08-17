@@ -24,7 +24,7 @@ export default function SignUp() {
   if (redirect) return <Redirect to="/user_preferences" />;
 
   return (
-    <Container as="section" className="main" fluid>
+    <Container as="section" fluid>
       <Image src={appLogo} alt="I'm Thirsty Logo" fluid />
       <Form onSubmit={() => setRedirect(!redirect)}>
         <FormField

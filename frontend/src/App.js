@@ -5,10 +5,11 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import NotFound from './pages/NotFound';
 import UserPreferences from './pages/UserPreferences';
+import './styles/background.css';
 
 function App() {
   return (
-    <Container as="main" fluid>
+    <Container as="main" className="main" fluid>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={SignUp} />

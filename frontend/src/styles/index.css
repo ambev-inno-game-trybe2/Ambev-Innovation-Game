@@ -38,6 +38,6 @@ body p {
 }
 
 #root {
-  min-width: 1vw;
-  min-height: 1vh;
+  width: 100vw;
+  height: 100vh;
 }

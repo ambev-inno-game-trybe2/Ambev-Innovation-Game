@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const AppContext = createContext();
 
-export function appContextProvider({ children }) {
+export function AppContextProvider({ children }) {
   const [authOn, setAuthOn] = useState(false);
 
   const context = { authOn };
@@ -15,6 +15,6 @@ export function appContextProvider({ children }) {
   );
 }
 
-appContextProvider.propTypes = {
+AppContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
