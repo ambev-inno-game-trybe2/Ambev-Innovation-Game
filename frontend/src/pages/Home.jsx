@@ -16,7 +16,7 @@ const initialState = {
 };
 
 export default function Home() {
-  const { clearForm, handleChange } = useForm(initialState);
+  const { values, clearForm, handleChange } = useForm(initialState);
   return (
     <Container as="section" className="main" fluid>
       <Image src={appLogo} alt="I'm Thirsty Logo" fluid />
@@ -25,13 +25,15 @@ export default function Home() {
           placeholder="Nome"
           type="text"
           name="userName"
+          value={values.userName}
           required
           onChange={(event) => handleChange(event)}
         />
         <FormField
           placeholder="Senha"
-          type="text"
+          type="password"
           name="password"
+          value={values.password}
           required
           onChange={(event) => handleChange(event)}
         />

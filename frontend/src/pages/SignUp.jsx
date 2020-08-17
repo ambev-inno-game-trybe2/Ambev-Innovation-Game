@@ -19,7 +19,7 @@ const initialState = {
 
 export default function SignUp() {
   const [redirect, setRedirect] = useState(false);
-  const { clearForm, handleChange } = useForm(initialState);
+  const { values, clearForm, handleChange } = useForm(initialState);
 
   if (redirect) return <Redirect to="/user_preferences" />;
 
@@ -32,6 +32,7 @@ export default function SignUp() {
           type="text"
           name="userName"
           required
+          value={values.userName}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -39,6 +40,7 @@ export default function SignUp() {
           type="email"
           name="userEmail"
           required
+          value={values.userEmail}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -46,6 +48,7 @@ export default function SignUp() {
           type="text"
           name="userAdress"
           required
+          value={values.userAdress}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -53,6 +56,7 @@ export default function SignUp() {
           type="text"
           name="userCity"
           required
+          value={values.userCity}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -60,12 +64,14 @@ export default function SignUp() {
           type="text"
           name="userCountry"
           required
+          value={values.userCountry}
           onChange={(event) => handleChange(event)}
         />
         <FormField
           type="date"
           name="userBirthday"
           required
+          value={values.userBirthday}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -73,6 +79,7 @@ export default function SignUp() {
           type="password"
           name="password"
           required
+          value={values.password}
           onChange={(event) => handleChange(event)}
         />
         <FormField
@@ -80,6 +87,7 @@ export default function SignUp() {
           type="password"
           name="password"
           required
+          value={values.password}
           onChange={(event) => handleChange(event)}
         />
         <button type="button">Cadastre-se</button>
