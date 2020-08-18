@@ -1,0 +1,7 @@
+.form-input {
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: inherit;
+}

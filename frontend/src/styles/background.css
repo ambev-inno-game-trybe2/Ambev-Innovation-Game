@@ -1,0 +1,8 @@
+.main {
+  background-attachment: fixed;
+  background-color: var(--lightGray);
+  background-image: url(../assets/greendrink.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+}
