@@ -7,6 +7,7 @@ const hash = require('../utils/hash');
 const verifyJWT = require('../middlewares/verifyJWT');
 const validateUserModel = require('../middlewares/validateUserModel');
 const verifyIfUserExists = require('../middlewares/verifyIfExists');
+
 const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
   const token = generateToken(email);

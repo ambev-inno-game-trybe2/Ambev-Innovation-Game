@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const Recipe = require('../models/Recipes');
-
+const verifyJWT = require('../middlewares/verifyJWT');
+const validateRecipe = require('../middlewares/validateRecipes');
 const CreateRecipe = async (req, res) => {
   const { title, recipeIngredients, tasteCategory } = req.body;
   if (!req.body) {
@@ -50,9 +51,9 @@ const getOneRecipe = async (req, res) => {
   return res.json(recipe).status(200);
 };
 router.get('/all', getAllRecipes);
-router.post('/', CreateRecipe);
-router.delete('/', deleteRecipe);
-router.patch('/', updateRecipe);
+router.post('/', verifyJWT, validateRecipe, CreateRecipe);
+router.delete('/', verifyJWT, deleteRecipe);
+router.patch('/', verifyJWT, updateRecipe);
 router.get('/', getOneRecipe);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const newIngredientValidationRules = require('./ingredientModel');
 let data1 = {
   name: 'Maçã',
   category: 'fruta',
-  slug: ['apple'],
+  slug: ['apple', "lol'"],
 };
 
 const validate = new Validator(data1, newIngredientValidationRules);

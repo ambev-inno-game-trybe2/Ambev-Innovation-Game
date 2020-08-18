@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const Ingredient = require('../models/Ingredients');
+const validateIngredientModels = require('../middlewares/validateIngredient');
+const verifyJWT = require('../middlewares/verifyJWT');
 
 const getAllIngredients = async (req, res) => {
   const ingredients = await Ingredient.find();
@@ -43,9 +45,9 @@ const getIngredient = async (req, res) => {
 };
 
 router.get('/all', getAllIngredients);
-router.post('/', createIngredient);
-router.delete('/', deleteIngredient);
-router.patch('/', updateIngredient);
+router.post('/', verifyJWT, validateIngredientModels, createIngredient);
+router.delete('/', verifyJWT, deleteIngredient);
+router.patch('/', verifyJWT, updateIngredient);
 router.get('/', getIngredient);
 
 module.exports = router;
