@@ -2,7 +2,7 @@
 max-height: 50rem;
 max-width: 25rem;
 text-align: center;
-margin: 0 15rem;
+margin: auto;
 }
 
 .login-button {
@@ -15,7 +15,7 @@ margin: 0 15rem;
 .logo {
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  margin: auto;
   padding: 1rem;
 }
 
