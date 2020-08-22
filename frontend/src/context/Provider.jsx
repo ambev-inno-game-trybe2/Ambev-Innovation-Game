@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import context from './context';
 
 const Provider = ({ children }) => {
-  const [authOn, setAuthOn] = useState(false);
   const [filterState, setFilterState] = useState();
   const [filterCity, setFilterCity] = useState();
 
   const storeContext = {
-    authOn,
     filterState,
     setFilterState,
     filterCity,
