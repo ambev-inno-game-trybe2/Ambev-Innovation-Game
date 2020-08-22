@@ -9,11 +9,10 @@ import IngredientsList from './pages/IngredientsList';
 import RecipeDetail from './pages/RecipeDetail';
 import RegisterRecipe from './pages/RegisterRecipe';
 import UserPreferences from './pages/UserPreferences';
-import './styles/background.css';
 
 function App() {
   return (
-    <Container as="main" className="main" fluid>
+    <Container as="main" fluid>
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/signup" component={SignUp} />
