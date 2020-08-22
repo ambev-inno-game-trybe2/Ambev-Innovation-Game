@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/IngredientCard.css';
 
 const IngredientCard = ({ ingredient }) => {
   return (
-    <div>
+    <div className="ingredient-card">
       <h4>{ingredient.name}</h4>
       {ingredient.nickname.map((nick) => (
         <p key={nick}>{nick}</p>

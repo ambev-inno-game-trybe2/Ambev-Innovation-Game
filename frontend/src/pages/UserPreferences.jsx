@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import IngredientCard from '../components/IngredientCard';
 import InfoModal from '../components/InfoModal';
 import { ingredientesMock as ingredients } from '../mock/mockTables';
@@ -15,11 +17,14 @@ export default function UserPreferences() {
         onHide={() => setShowModal(!showModal)}
       />
       <h1>Escolha 5 ingredientes</h1>
-      {ingredients.map((ingredient) => (
-        <IngredientCard key={ingredient.name} ingredient={ingredient} />
-      ))}
-      <button type="button">Pular</button>
-      <button type="button">Finalizar</button>
+      <Container fluid>
+        {' '}
+        {ingredients.map((ingredient) => (
+          <IngredientCard key={ingredient.name} ingredient={ingredient} />
+        ))}
+        <Button variant="secondary" value="Pular" />
+        <Button variant="secondary" value="Finalizar" />
+      </Container>
     </section>
   );
 }
