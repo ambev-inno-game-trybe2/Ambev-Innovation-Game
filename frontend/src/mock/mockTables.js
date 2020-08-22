@@ -84,7 +84,8 @@ export const receitasMock = [
     },
     category: 'coquetel',
     liked: 300,
-    image: 'https://i.pinimg.com/564x/c4/3b/96/c43b96f5675246ae6b0f1132735cea85.jpg',
+    image:
+      'https://i.pinimg.com/564x/c4/3b/96/c43b96f5675246ae6b0f1132735cea85.jpg',
     ingredients: [
       {
         ingredientId: 6,
