@@ -5,9 +5,10 @@ const IngredientCard = ({ ingredient }) => {
   return (
     <div>
       <h4>{ingredient.name}</h4>
-      {ingredient.alternative_names.map((altName) => (
-        <p key={altName}>{altName}</p>
+      {ingredient.nickname.map((nick) => (
+        <p key={nick}>{nick}</p>
       ))}
+      <p>`Liked for: ${ingredient.liked}`</p>
     </div>
   );
 };
