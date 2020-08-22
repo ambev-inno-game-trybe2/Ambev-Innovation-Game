@@ -8,7 +8,7 @@ const IngredientCard = ({ ingredient }) => {
       {ingredient.nickname.map((nick) => (
         <p key={nick}>{nick}</p>
       ))}
-      <p>`Liked for: ${ingredient.liked}`</p>
+      <p>Liked for: {ingredient.liked}</p>
     </div>
   );
 };
@@ -16,7 +16,8 @@ const IngredientCard = ({ ingredient }) => {
 IngredientCard.propTypes = {
   ingredient: PropTypes.shape({
     name: PropTypes.string,
-    alternative_names: PropTypes.arrayOf(PropTypes.string),
+    nickname: PropTypes.arrayOf(PropTypes.string),
+    liked: PropTypes.string,
   }).isRequired,
 };
 
