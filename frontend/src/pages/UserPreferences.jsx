@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import IngredientCard from '../components/IngredientCard';
 import InfoModal from '../components/InfoModal';
+import { ingredientesMock as ingredients } from '../mock/mockTables';
 
 const text = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque voluptates id iste nemo distinctio error recusandae perspiciatis molestias minus possimus iure vel aliquam, blanditiis provident voluptatem, voluptatum consequuntur voluptas laudantium?`;
 
-export default function UserPreferences({ ingredients }) {
+export default function UserPreferences() {
   const [showModal, setShowModal] = useState(true);
   return (
     <section>
@@ -23,7 +23,3 @@ export default function UserPreferences({ ingredients }) {
     </section>
   );
 }
-
-UserPreferences.propTypes = {
-  ingredients: PropTypes.arrayOf(PropTypes.obj).isRequired,
-};
