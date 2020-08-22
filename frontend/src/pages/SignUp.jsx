@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
@@ -99,6 +99,11 @@ export default function SignUp() {
           >
             Limpar
           </Button>
+          <Link to="/">
+            <Button variant="secondary" className="login-button">
+              Voltar
+            </Button>
+          </Link>
         </div>
       </Form>
     </Container>
