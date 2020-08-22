@@ -18,7 +18,6 @@ export default function UserPreferences() {
       />
       <h1>Escolha 5 ingredientes</h1>
       <Container fluid>
-        {' '}
         {ingredients.map((ingredient) => (
           <IngredientCard key={ingredient.name} ingredient={ingredient} />
         ))}
