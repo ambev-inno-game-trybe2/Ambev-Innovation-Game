@@ -19,10 +19,14 @@ export default function UserPreferences() {
       <h1>Escolha 5 ingredientes</h1>
       <Container fluid>
         {ingredients.map((ingredient) => (
-          <IngredientCard key={ingredient.name} ingredient={ingredient} />
+          <IngredientCard
+            key={ingredient.name}
+            ingredient={ingredient}
+            onClick={() => null}
+          />
         ))}
-        <Button variant="secondary" value="Pular" />
-        <Button variant="secondary" value="Finalizar" />
+        <Button variant="secondary">Pular</Button>
+        <Button variant="secondary">Finalizar</Button>
       </Container>
     </section>
   );
