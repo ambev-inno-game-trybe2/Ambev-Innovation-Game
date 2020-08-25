@@ -1,14 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+
 const app = express();
+const path = require('path');
+const cors = require('cors');
+const morgan = require('morgan');
 const UserRoutes = require('../routes/UserRoutes');
 const RecipeRoutes = require('../routes/RecipeRoutes');
 const IngredientRoutes = require('../routes/IngredientsRoutes');
-
-const cors = require('cors');
-
-const morgan = require('morgan');
-const path = require('path');
 
 app.use(cors());
 app.use(express.json());

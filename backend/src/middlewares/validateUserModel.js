@@ -1,5 +1,6 @@
 const Validator = require('validatorjs');
 const newUserValidationRules = require('./userModel');
+
 const validateUserModel = (req, res, next) => {
   const validate = new Validator(req.body, newUserValidationRules);
   if (validate.passes() === true) {

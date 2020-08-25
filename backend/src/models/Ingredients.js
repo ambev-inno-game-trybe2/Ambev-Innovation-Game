@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const IngredientSchema = new mongoose.Schema({
   name: { type: String, require: true },
   likesCount: { type: Number, default: 0 },

@@ -1,5 +1,6 @@
 const Validator = require('validatorjs');
 const newIngredientValidationRules = require('./recipeModel');
+
 const validateRecipe = (req, res, next) => {
   const validate = new Validator(req.body, newIngredientValidationRules);
   if (validate.passes() === true) {

@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+
+const router = express.Router();
 const Ingredient = require('../models/Ingredients');
 const validateIngredientModels = require('../middlewares/validateIngredient');
 const verifyJWT = require('../middlewares/verifyJWT');

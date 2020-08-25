@@ -1,4 +1,5 @@
 const User = require('../models/User');
+
 const verifyIfUserExists = async (req, res, next) => {
   const { email } = req.body;
   const user = await User.find({ email });

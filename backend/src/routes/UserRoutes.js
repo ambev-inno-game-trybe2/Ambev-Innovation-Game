@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+
 const router = express.Router();
 const User = require('../models/User');
 const generateToken = require('../utils/token');
@@ -12,7 +13,7 @@ const createUser = async (req, res) => {
   const { email, bio, address, password } = req.body;
   const token = generateToken(email);
   const encpassword = hash.hashNow(password);
-  const user = await User.create({ email, bio, address, password: encpassword, token: token });
+  const user = await User.create({ email, bio, address, password: encpassword, token });
   return res.json({ message: 'Usuário criado!', user }).status(201);
 };
 
@@ -34,7 +35,7 @@ const deleteUser = async (req, res) => {
 const updateUser = async (req, res) => {
   const { _id, update } = req.body;
   try {
-    const user = await Recipe.findByIdAndUpdate(_id, update, { new: true });
+    const user = await User.findByIdAndUpdate(_id, update, { new: true });
     return res.json({ user }).send(200);
   } catch (error) {
     res.json({ message: error });

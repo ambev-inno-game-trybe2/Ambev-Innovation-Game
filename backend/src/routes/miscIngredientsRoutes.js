@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const Ingredient = require('../models/Ingredients');
 const User = require('../models/User');
 
@@ -11,11 +11,11 @@ const likeIngredient = async (req, res) => {
 
 const favIngredient = async (req, res) => {
   const { _id } = req.body;
-  if (!user_id) {
+  if (!_id) {
     const ingredient = await Ingredient.findOneAndUpdate(
       { _id },
       { $inc: { likeCount: 1 } },
-      { new: true }
+      { new: true },
     );
     return res.json({ message: 'liked', ingredient }).status(200);
   }
@@ -25,7 +25,7 @@ const favIngredient = async (req, res) => {
       $addToSet: {
         likedIngredients: _id,
       },
-    }
+    },
   );
   return res.json(ingredient);
 };
