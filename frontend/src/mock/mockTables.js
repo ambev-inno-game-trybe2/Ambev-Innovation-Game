@@ -1,14 +1,14 @@
 export const receitasMock = [
   {
     _id: 1,
-    title: 'receita top demais',
+    title: 'Sabor Mineiro',
     userId: 2,
-    description: 'falar sobre esta receita',
+    description: 'Combinação perfeita com qualquer tipo de queijo',
     preparationMode: 'como fazer esta receita',
     origin: { state: 'MG', city: 'Belo horizonte', address: 'Rua num sei da onde' },
     category: 'suco',
     liked: 100,
-    image: 'image.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTU0UKotmTcrbHfMrKPJU9WEyeG1-_I9rw6bw&usqp=CAU',
     ingredients: [
       {
         ingredientId: 5,
@@ -22,14 +22,14 @@ export const receitasMock = [
   },
   {
     _id: 2,
-    title: 'receita top demais',
+    title: 'Refresco do Morumbi',
     userId: 2,
-    description: 'falar sobre esta receita',
+    description: 'Receita do intervalo do jogo',
     preparationMode: 'como fazer esta receita',
     origin: { state: 'SP', city: 'São Paulo', address: 'Rua num sei da onde' },
     category: 'suco',
     liked: 100,
-    image: 'image.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7IBL_QXrLYAs4iQ9307GmnC5X8dCxD5iTMA&usqp=CAU',
     ingredients: [
       {
         ingredientId: 5,
@@ -43,14 +43,14 @@ export const receitasMock = [
   },
   {
     _id: 3,
-    title: 'receita top demais',
+    title: 'Refresco da Praia',
     userId: 2,
-    description: 'falar sobre esta receita',
+    description: 'Mata a sua sede, aumenta sua vontade',
     preparationMode: 'como fazer esta receita',
     origin: { state: 'RJ', city: 'Rio de Janeiro', address: 'Rua num sei da onde' },
     category: 'suco',
     liked: 100,
-    image: 'image.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYhp7NUz54DnaqeaZ-b3j42UVE8RmI66jIAQ&usqp=CAU',
     ingredients: [
       {
         ingredientId: 5,
@@ -118,21 +118,21 @@ export const ingredientesMock = [
 
 export const receitaDetalheMock = {
   _id: 1,
-  title: 'receita top demais',
+  title: 'Sabor Mineiro',
   userId: 2,
-  description: 'falar sobre esta receita',
+  description: 'Combinação perfeita com qualquer tipo de queijo',
   preparationMode: 'como fazer esta receita',
   origin: { state: 'MG', city: 'Belo horizonte', address: 'Rua num sei da onde' },
   category: 'suco',
   liked: 100,
-  image: 'image.png',
+  image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTU0UKotmTcrbHfMrKPJU9WEyeG1-_I9rw6bw&usqp=CAU',
   ingredients: [
     {
-      ingredientId: 5,
+      name: 'Morango',// ingredientId: 5,
       quantity: 2,
     },
     {
-      ingredientId: 1,
+      name: 'Maça',// ingredientId: 1,
       quantity: 4,
     },
   ],

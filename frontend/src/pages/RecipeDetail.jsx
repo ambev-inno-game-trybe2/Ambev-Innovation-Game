@@ -4,6 +4,9 @@ import { Link, Redirect } from 'react-router-dom';
 import { receitaDetalheMock } from '../mock/mockTables';
 import { getAppThirsty, getUser } from '../services/recipesAPI';
 import CardRecipeDetails from '../components/CardRecipeDetail';
+import Button from 'react-bootstrap/Button';
+import '../styles/recipeList.css';
+import '../styles/cardRecipeDetail.css';
 
 function RecipeDetail({ location: { pathname } }) {
   const [recipe, setRecipe] = useState();
@@ -25,7 +28,7 @@ function RecipeDetail({ location: { pathname } }) {
   return (
     <section>
       <Link to={'/recipes'}>
-        <button>Visualizar página de receitas</button>
+        <Button>Visualizar página de receitas</Button>
       </Link>
       {recipe && <CardRecipeDetails recipe={recipe} />}
     </section>
