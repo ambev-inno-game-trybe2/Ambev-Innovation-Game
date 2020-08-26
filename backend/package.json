@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/api/index.js",
-    "start": "nodemon src/api/index.js",
-    "docs": "./node_modules/.bin/js-doc -c jsdoc.json"
+    "start": "node src/api/index.js",
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -20,6 +20,7 @@
     "validatorjs": "^3.18.1"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
@@ -27,6 +28,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "js-doc": "^0.5.0",
+    "jsdoc": "^3.6.5",
     "nodemon": "^1.18.9",
     "prettier": "^2.1.0"
   }

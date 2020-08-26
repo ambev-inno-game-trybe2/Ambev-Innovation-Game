@@ -8,6 +8,7 @@ const port = PORT || 5000;
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => console.log(`Mongo is running on cluster ${MONGODB_URI}`));
 

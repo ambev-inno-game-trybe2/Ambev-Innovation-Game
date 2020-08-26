@@ -1,9 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const Recipe = require('../models/Recipes');
-const verifyJWT = require('../middlewares/verifyJWT');
-const validateRecipe = require('../middlewares/validateRecipes');
+const Recipe = require('../../models/Recipes');
+const verifyJWT = require('../../middlewares/verifyJWT');
+const validateRecipe = require('../../middlewares/validateRecipes');
 
 const CreateRecipe = async (req, res) => {
   const { title, recipeIngredients, tasteCategory } = req.body;

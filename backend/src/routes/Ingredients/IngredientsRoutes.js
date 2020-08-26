@@ -1,9 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const Ingredient = require('../models/Ingredients');
-const validateIngredientModels = require('../middlewares/validateIngredient');
-const verifyJWT = require('../middlewares/verifyJWT');
+const Ingredient = require('../../models/Ingredients');
+const validateIngredientModels = require('../../middlewares/validateIngredient');
+const verifyJWT = require('../../middlewares/verifyJWT');
 
 const getAllIngredients = async (req, res) => {
   const ingredients = await Ingredient.find();
