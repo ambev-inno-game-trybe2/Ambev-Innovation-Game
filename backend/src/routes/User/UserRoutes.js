@@ -34,8 +34,8 @@ const createUser = async (req, res) => {
  * @async
  * @function login
  * @param {Object} UserInfo - Email and user password.
- * @returns {AuthObject} Token object.
- * @throws {ErrorObject} Throw object error.
+ * @returns {Object} AuthObject with Token.
+ * @throws {Object} Throw object error.
  */
 const loginRoute = async (req, res) => {
   const { email, password } = req.body;
@@ -44,7 +44,7 @@ const loginRoute = async (req, res) => {
   const pw = `"${password}"`;
 
   if (user.email === email && unhashed === pw) {
-    return res.json({ auth: true, token: user.token, user }).status(200);
+    return res.json({ auth: true, token: user.token }).status(200);
   }
   return res.json({ error: 'wrong user info' }).status(400);
 };
