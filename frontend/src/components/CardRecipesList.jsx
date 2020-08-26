@@ -6,9 +6,9 @@ function CardRecipesList({ recipes }) {
 
   return (
     <Link to={`/recipes/${id}`}>
-      <section className="CardOrder card">
+      <section className="card-recipe">
         <img src={image} alt={`receita ${title}`} />
-        <p>{title}</p>
+        <p>Receita: {title}</p>
         <p>Origem: {city}, {state}</p>
         <p>Categoria: {category}</p>
         <p>Curtidas: {liked}</p>
